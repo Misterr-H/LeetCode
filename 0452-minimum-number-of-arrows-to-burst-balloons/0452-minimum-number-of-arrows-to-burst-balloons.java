@@ -7,10 +7,7 @@ class Solution {
         int[] currBalloon = points[0];
         int minArrows = 1;
         for(int i=1; i < points.length; i++) {
-            System.out.println(points[i][0]);
-            System.out.println(currBalloon[1]);
             if(points[i][0] > currBalloon[1]) {
-                System.out.println("in if");
                 minArrows++;
                 currBalloon = points[i];
             }
