@@ -1,28 +1,18 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
-        for (int i = 0; i < numbers.length; i++) {
-            int complement = target - numbers[i];
-            int left = i + 1;
-            int right = numbers.length - 1;
-            int index = binarySearch(numbers, left, right, complement);
-            if (index != -1) {
-                return new int[] {i + 1, index + 1};
-            }
-        }
-        return new int[] {-1, -1};
-    }
-
-    private int binarySearch(int[] numbers, int left, int right, int target) {
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (numbers[mid] == target) {
-                return mid;
-            } else if (numbers[mid] < target) {
-                left = mid + 1;
+        int index1 = 0;
+        int index2 = numbers.length - 1;
+        int point1 = numbers[index1];
+        int point2 = numbers[index2];
+        while(point1 + point2 != target) {
+            if (point1 + point2 > target) {
+                index2--;
+                point2 = numbers[index2];
             } else {
-                right = mid - 1;
+                index1++;
+                point1 = numbers[index1];
             }
         }
-        return -1;
+        return new int[] {index1+1, index2+1};
     }
 }
