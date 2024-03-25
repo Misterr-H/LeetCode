@@ -14,11 +14,8 @@ class Solution {
             int right = nums.length-1;
             while(left<right) {
                 if(nums[left] + nums[right]==target && left!=right) {
-                    List<Integer> ans1 = new ArrayList<>();
-                    ans1.add(nums[i]);
-                    ans1.add(nums[left]);
-                    ans1.add(nums[right]);
-                    ans.add(ans1);
+                    List<Integer> triplet = new ArrayList<>(Arrays.asList(nums[i], nums[left], nums[right]));
+                    ans.add(triplet);
                     while(left < right && nums[left] == nums[left+1]) left++;
                     while(left < right && nums[right] == nums[right-1]) right--;
                     left++;
