@@ -41,6 +41,7 @@ class Solution {
             root.right = newRight;
             newLeft.left = temp1;
             newRight.right = temp2;
+            return;
         }
         Helper(root.left, val, depth, currDepth+1);
         Helper(root.right, val, depth, currDepth+1);
