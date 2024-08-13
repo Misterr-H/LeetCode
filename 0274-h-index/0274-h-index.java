@@ -4,9 +4,9 @@ class Solution {
         Arrays.sort(citations);
         int n = citations.length;
         int h = 0;
-        for(int i = 0; i < n; i++) {
-            if(n-i>=citations[i]) {
-                h = citations[i];
+        for(int i = n-1; i >=0 ;i--) {
+            if(citations[i]>h) {
+                h++;
             }
         }
         return h;
