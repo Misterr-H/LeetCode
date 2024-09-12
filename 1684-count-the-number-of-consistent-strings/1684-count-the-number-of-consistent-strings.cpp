@@ -1,6 +1,7 @@
 class Solution {
 public:
     int countConsistentStrings(string allowed, vector<string>& words) {
+        ios_base::sync_with_stdio(false);
         vector<bool> appear(26, false);
         for(int i=0; i<allowed.length(); i++) {
             appear[allowed[i] - 97] = true;
