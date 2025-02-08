@@ -11,17 +11,13 @@ class NumberContainers {
 
         int exists = map1.getOrDefault(index, -1);
         
-        if(exists == -1) {
-            ss.add(index);
-            map2.put(number, ss);
-        } else {
-            // System.out.println(exists);
-            SortedSet<Integer> ss2 = map2.get(exists);
+        if(exists != -1) {
+           SortedSet<Integer> ss2 = map2.get(exists);
             ss2.remove(index);
             map2.put(exists, ss2);
-            ss.add(index);
-            map2.put(number, ss);
-        }
+        } 
+        ss.add(index);
+        map2.put(number, ss);
         map1.put(index, number);
 
     }
